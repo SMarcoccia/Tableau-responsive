@@ -1,0 +1,61 @@
+html{
+  height: 100%;
+  font-size: 62.5%; 
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100%;
+} 
+
+
+body{
+  margin: 0;
+  padding: 1.0rem;
+}
+
+table{
+  /* table-layout: fixed; */ /*ATTENTION : Mettre 'table-layout: fixed' fait débordé les mots du 
+  /*tableau si trop long.*/
+  border: 0.1rem solid black; 
+  border-collapse: collapse;
+  width: 100%; 
+  height: 100%;
+  background-color: gray; 
+  font-size: 2.0rem;
+  /* hyphens: auto; */
+} 
+
+td, th { 
+  border: 0.1rem solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+caption{
+  color:red;
+  border: 0.1rem solid black; 
+  border-bottom: none;
+  padding: 0.5rem;
+  background-color: yellow;
+  font-size: 2.0rem;
+}
+
+/***********************************************************************************************/
+
+/*Effet : la réduction se fait naturellement*/
+/* - Il faut scrollé avec la barre du browser*/
+/* @media(max-width: 40rem){
+  table{
+    table-layout: auto;
+  }
+} */
+
+/*Effet : */
+/* - La réduction se fait naturellement.*/
+/* - Il faut scroller avec la barre du tableau si le mot dépasse.*/
+/* - ATTENTION : encapsuler '<table>' avec une div pour que overflow-x:auto fonctionne.*/
+@media(max-width: 40rem){
+  div {
+    overflow-x:auto;
+  }
+}
+
+

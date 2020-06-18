@@ -1,0 +1,89 @@
+html{
+  height: 100%;
+  font-size: 62.5%; 
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100%;
+} 
+
+body{
+  margin: 0;
+  padding: 1.0rem;
+}
+
+table{
+  table-layout: fixed;
+  border: 0.1rem solid black; 
+  border-collapse: collapse;
+  width: 100%; 
+  height: 100%;
+  background-color: #F5F5DC; 
+  font-size: 2.0rem;
+} 
+
+caption{
+  color:red;
+  border: 0.1rem solid black; 
+  border-bottom: none;
+  padding: 0.5rem;
+  background-color: yellow;
+  font-size: 2.0rem;
+}
+
+
+th, td{
+  border: 0.1rem solid black;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 1.0rem;
+  padding: 0.5rem;
+  word-break:break-word;
+}
+
+tr:nth-child(even){
+  background-color: grey;
+}
+
+
+/*Attention avec display: block si on fait un tableau obliger de mettre les mêmes noms sinon décalage.*/
+@media(max-width: 40rem){
+  section, caption, table, caption, thead, tbody, td, th{
+    display: block;
+  } /*Crée un block. Sort la balise de la structure par défaut. Donc casse la structure et les élém. s'empile.*/
+
+  table{
+    border: none;
+  }
+
+  caption, tr{
+    display: table; /*les balises <tr> sont émulées commme des tables.*/
+    margin-top: -1px; /*Sinon chevauchement donne un trait plus épais.*/
+    width: 100%; 
+  } 
+
+  /*Suppression */
+  th{
+    font-size: 0;
+    border: none;
+    visibility: hidden;
+  }
+
+  td, th{
+    display: table-row; /*Permet de placé chaques cellules sur une ligne.*/
+  }
+
+  td::before{
+    /*Récupère la valeur de l'attribut data-headers que l'on place avant td ceci marche sans le js.*/
+    content: attr(data-headers); 
+    display: table-cell;
+    width: 50%;  
+    border-right: 1px solid black;
+  }
+}
+
+
+
+
+
+
+
+        
